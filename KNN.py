@@ -10,7 +10,7 @@ def knn(data, query, k, distance_fn, choice_fn):
         # Calculate the distance between the query example and the current
         distance = distance_fn(example[:-1], query)
         # Add the distance and the index of the example to an ordered collection
-        neighbor_distances_and_indices.append(distance, index)
+        neighbor_distances_and_indices.append((distance, index))
 
     # Sort the ordered collection of distances and indices from
     # smallest to largest (in ascending order) by the distances
@@ -58,10 +58,10 @@ def main():
         [68.22, 142.34],
         [67.79, 144.30],
         [68.70, 123.30],
-        [69.80, 141.49], knn
-        [70.01, 136.46], knn
-        [67.90, 112.37], knn
-        [66.49, 127.45], knn
+        [69.80, 141.49],
+        [70.01, 136.46],
+        [67.90, 112.37],
+        [66.49, 127.45],
     ]
 
     # Question:
