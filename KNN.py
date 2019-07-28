@@ -1,4 +1,6 @@
 import math
+from collections import Counter
+
 def Knn(data, query, k, distance_fn, choice_fn):
     neighbor_distances_and_indices = []
 
@@ -14,3 +16,10 @@ def euclidean_distance(point1, point2):
     for i in range(len(point1)):
         sum_squared_distance += math.pow(point1[i] - point2[i], 2)
     return math.sqrt(sum_squared_distance)
+
+
+def mean(labels):
+    return sum(labels)/len(labels)
+
+def mode(labels):
+        return Counter(labels).most_common(1)[0][0]
